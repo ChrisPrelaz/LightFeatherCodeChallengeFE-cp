@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html>
-   
+
 <head>
     <title>Form</title>
+    <link rel="stylesheet" type="text/css" href="formLF.css"/>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+
 </head>
 <body>
+    
     <h2>Please fill out the form below</h2>
-    <form action="" method="get" class="form-LF">
-    <div>
-        <label for="firstName">First Name</label>
-        <input type="text" name="firstName" id="name" required>
-        <label for="lastName">Last Name</label>
-        <input type="text" name="lastName" id="name" required>
-    </div>
-    <p></p>
-    <div>
-        <label for="contactType">Preferred Contact</label>
-        <p></p>
+    <form action="https://o3m5qixdng.execute-api.us-east-1.amazonaws.com/api/submit" method="post">
+  
+        <label for="firstName">First Name*</label>
+        <input type="text" name="firstName" id="firstName" required pattern="[A-Za-z]{1,}"autocomplete="on">
+        <label for="lastName">Last Name*</label>
+        <input type="text" name="lastName" id="lastName" required pattern="[A-Za-z]{1,}"autocomplete="on">
+    
+    <br />
+   
+        <label for="contactType">Preferred Contact*</label>
+        <br />
         <label for="email">Email</label>
-        <input type="checkbox" name="email" id="contactType">
-        <p></p>
-        <input type="email" id="email" name="email">
-        <p></p>
+        <input type="checkbox" name="emailch" id="chkbx" onclick="onlyOne(this)">
+        <br />
+        <input type="email" id="email" name="email"autocomplete="on">
+        <br />
         <label for="phone">Phone</label>
-        <input type="checkbox" name="phone" id="contactType">
-        <p></p>
-        <input type="tel" id="phone" name="phone" placeholder="123-45-678"
-        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
-    </div>
-    <div>
+        <input type="checkbox" name="phonech" id="chkbx" onclick="onlyOne(this)">
+        <br />
+        <input type="tel" id="phone" name="phone" placeholder="123-456-7890"
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"autocomplete="on">
+  
+   
         <label for ="supervisor">Supervisor</label>
-        <p></p>
-        <select id="supervisor" name="cars">
+        <br />
+        <select id="supervisor" name="supervisor"autocomplete="on">
 
         </select>
-    </div>
+  
+    <input type="submit" value="Submit">
 </form>
+<p>* marks required field</p>
+<script src="FormLF.js"></script>
+<noscript>You need to enable JavaScript to submit.</noscript>
 </body>
 </html>
