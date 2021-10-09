@@ -11,35 +11,35 @@
 <body>
     
     <h2>Please fill out the form below</h2>
-    <form action="https://o3m5qixdng.execute-api.us-east-1.amazonaws.com/api/submit" method="post" class="form-LF">
-    <div>
+    <form action="https://o3m5qixdng.execute-api.us-east-1.amazonaws.com/api/submit" method="post">
+  
         <label for="firstName">First Name*</label>
-        <input type="text" name="firstName" id="name" required pattern="[A-Za-z]{1,}"autocomplete="on">
+        <input type="text" name="firstName" id="firstName" required pattern="[A-Za-z]{1,}"autocomplete="on">
         <label for="lastName">Last Name*</label>
-        <input type="text" name="lastName" id="name" required pattern="[A-Za-z]{1,}"autocomplete="on">
-    </div>
+        <input type="text" name="lastName" id="lastName" required pattern="[A-Za-z]{1,}"autocomplete="on">
+    
     <br />
-    <div>
+   
         <label for="contactType">Preferred Contact*</label>
         <br />
         <label for="email">Email</label>
-        <input type="checkbox" name="email" id="contactType" >
+        <input type="checkbox" name="emailch" id="chkbx" onclick="onlyOne(this)">
         <br />
         <input type="email" id="email" name="email"autocomplete="on">
         <br />
         <label for="phone">Phone</label>
-        <input type="checkbox" name="phone" id="contactType" >
+        <input type="checkbox" name="phonech" id="chkbx" onclick="onlyOne(this)">
         <br />
         <input type="tel" id="phone" name="phone" placeholder="123-456-7890"
         pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"autocomplete="on">
-    </div>
-    <div>
+  
+   
         <label for ="supervisor">Supervisor</label>
         <br />
         <select id="supervisor" name="supervisor"autocomplete="on">
 
         </select>
-    </div>
+  
     <input type="submit" value="Submit">
 </form>
 <p>* marks required field</p>

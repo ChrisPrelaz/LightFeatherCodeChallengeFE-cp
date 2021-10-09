@@ -4,7 +4,8 @@ let formResponse={
     phone:string="",
     email:string="",
     supervisor:string="me",
-    contact:number=0
+    contactemail:bool=false,
+    contactphone:bool=false
 };
 
 
@@ -61,8 +62,28 @@ xhr.onreadystatechange = function () {
 
 xhr.send();
 
+function sendResponse(){
+    formResponse.first=document.getElementsByName('firstName');
+    formResponse.last=document.getElementsByName('lastName');
+    formResponse.email=document.getElementsByName('email');
+    formResponse.phone=document.getElementsByName('phone');
+    formResponse.supervisor=document.getElementsByName('supervisor');
+    formResponse.contactemail=document.getElementsByName('emailch');
+    formResponse.contactphone=document.getElementsByName('phonech');
+}
 
-var request = new XMLHttpRequest();
+
+
+
+
+/* var request = new XMLHttpRequest();
 request.open("POST", "https://o3m5qixdng.execute-api.us-east-1.amazonaws.com/api/submit");
-request.send(formResponse);
-
+request.send(JSON.stringify(formResponse));
+ */
+function onlyOne(checkbox) {
+    var checkboxes = document.getElementById('chkbox');
+    checkboxes.forEach((item) => {
+        item.checked = false
+    })
+    checkbox.checked = true
+}
